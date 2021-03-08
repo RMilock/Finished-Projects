@@ -1,0 +1,22 @@
+\select@language {english}
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}Metodo Analitico}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Contesto teorico}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Problema ristretto circolare piano}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Punti di equilibrio lagrangiani}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Verso l'hamiltoniana in forma normale}{8}{section.2.3}
+\contentsline {chapter}{\numberline {3}Studio della stabilit\IeC {\`a} di L4}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Costruzione della forma normale}{12}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Metodo di Birkhoff}{12}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Operatore di Lie}{13}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Applicazione del metodo di Birkhoff}{14}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Integrali del moto: le azioni}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}Dominio e introduzione di una norma}{16}{section.3.3}
+\contentsline {section}{\numberline {3.4}Stima del "tempo di fuga" di un'orbita}{17}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Massimizzazzione della velocit\IeC {\`a} delle azioni}{18}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Risultati}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Risultati generali riguardo il tempo e la regione di stabilit\IeC {\`a}}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Risultati per il problema di stabilit\IeC {\`a} di L4}{19}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Confronto con gli asteroidi esistenti}{21}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {A}Triangolo risolutivo della trasformata di Lie}{24}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Limitatezza delle funzioni in forma normale}{25}{appendix.Alph2}

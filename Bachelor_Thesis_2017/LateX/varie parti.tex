@@ -1,0 +1,82 @@
+In meccanica classica date le equazioni di Newton e il principio di unicità di Cauchy, si può descrivere univocamente l' orbita descritta dal sistema preso in esame.
+In generale queste equazioni lasciano definita quest'orbita tramite delle equazioni differenziali del secondo ordine che non sempre sono integrabili.
+Consideriamo, infatti un modello elementare di \textit{n} corpi in interazione solo attraverso la forza gravitazionale. Ad oggi, solo per $\textit{n}=2$ troviamo un soluzione esplicita del problema. 
+
+
+
+
+\section { Discussione riguardo al metodo analitico usato }
+
+Un'attenta analisi critica della metodologia impegata rivela due possibili miglioramenti per implementare gli strumenti utilizzati:
+\\i) partendo dalla coordinate polari, si può trovare una famiglia di coordinate canoniche che descrivono meglio il problema;
+\\ii) la norma utilizzata 
+
+
+Per cominciare si definiscono gli elementi caratteristici dei corpi del problema.\\
+Siano $(P,Q)$ , $(p,q)$, $(p',q')$ le coordinate rispettivamente del Sole, Giove e di un preciso asteroide. In più, sia M la massa del Sole, m quella di Giove e $\epsilon$ quella dell'asteroide. Denotiamo, infine, con $a$ la distanza Sole-Giove, ovvero $a:=||Q-q||$.
+\\Dunque, l'hamiltoniana del problema è $$ H = H_0 + H' $$ \\dove $H_0$ è l'hamiltonia dei due "primari", mentre 
+$$H' = \frac{{p'}^2}{2 \epsilon} - \frac{\epsilon G M}{||q' - Q||} - \frac{\epsilon G m}{||q' - q||} $$.
+Nel limite in cui la massa $\epsilon$ tende a zero, con evidenza $H'$\footnote {L'hamiltoniana $H'$ può essere resa independente da $\epsilon$ con una trasformazione canonica.} descriverà l'hamiltoniana del terzo corpo e $Q(t)$, $q(t)$ saranno le soluzioni del problema circolare a due corpi dato da $H_0$.
+\\\\Assunto, inoltre, che il moto dell'asteroide si svolga sul piano dei primari e che il moto di quest'ultimi sia circolare, si applicano in serie due cambi di coordinate. 
+In primo luogo, si passa a coordinate baricentriche con l'asse delle ascisse posto sulla direttrice dei due pianeti orientato verso il Sole. Successivamente, si considera un sistema di riferimento corotante con i primari con velocità $\omega$\footnote{$\omega \in \mathbb{R}^3$ t.c. $\omega^2*a^3 = G*(M+m)$}. 
+Si scelgono, in aggiunta, unità di misura tali che, definita $$\mu := \frac{m}{m+M}  $$, \\$a=1$, la velocità di rivoluzione di Giove $\omega$ sia unitaria, la massa del Sole sia $ 1-\mu $ e quella di Giove $ \mu $. Complessivamente, quindi, il sistema avrà massa 1 e il Sole starà costantemente sul punto $ Q*= (\mu,0,0)$ mentre Giove in $q*= (1-\mu,0,0)$.
+\\\\Rimosso ogni orpello formale, l'hamiltonia trasformata diventa \begin{equation}
+\label{hamiltonianaRTBP}
+H(q,p)= \frac{p^2}{2} -(q_1p_2 - q_2p_1) - \frac{1-\mu}{R} - \frac{\mu}{r}
+\end{equation}
+\\ove $R:=||q-Q*||$,$r:=||q-q*||$
+
+\subsection {Punti di equilibrio lagrangiani}
+
+Ponendo uguale a zero ogni derivata parziale della \ref{hamiltonianaRTBP} si ha
+$$p_3=0, \quad q_3=0,\quad p_1=-q_2,\quad p_2=q_1$$, 
+\begin{equation} 
+\label{eq:Plagr1}
+q_2(-1+ \frac{(1-\mu)}{R^{3/2}} + \frac{\mu}{r^{3/2}} )  
+\end{equation}
+\begin{equation} 
+\label{eq:Plagr2}
+-q_1 + \frac{(1-\mu)(q_1+\mu)}{R^{3/2}} + \frac{\mu (q_1-q+\mu)}{r^{3/2}} )
+\end{equation}
+\\\\Risolvendo le \ref{eq:Plagr1} e \ref{eq:Plagr2} si ottengo i punti d'equilibrio o punti "lagrangiani": posto $q_2=0$ nella \ref{eq:Plagr2} otteniamo $L_1$,$L_2$,$L_3$ detti "collineari"; mentre con $q_2\neq0$ e $R=r$ si determinano $L4$ e $L5$ detti "triangolari". Quest'ultimi, infatti, giacciono rispettivamente sul vertice superiore e inferiore dei due triangoli equilateri formati con i primari.
+
+
+\section {Natura di L4-L5}
+
+Individuati i punti lagrangiani, si trasla l'hamiltoniana su L4 in modo da poter applicare la teoria delle piccole oscillazioni. In particolare, si linearizzerà l'hamiltoniana nella nuova origine e, ottenuti i suoi autovalori, si discuterà la natura dell'equilibrio.
+Formalmente essendo $L4$ dato da $ q_1 = -\frac{(1- 2\mu)}{2} $, $ q_2 = \frac{\sqrt{3}}{2} $, $ p_1 = -q_2 $, $ p_2 =q_1 $ e sviluppata \ref{hamiltonianaRTBP} attorno a questo punto, si trova che $$\tilde{H} = \tilde{H_2} + O(\tilde{q}^3) $$ \\dove le hamiltoniane "tildate" sono espresse nelle nuove coordinate $(\tilde{p},\tilde{q})$.
+\\Nel dettaglio, $H_2 = \mathcal{H}(p_1,p_2,q_1,q_2) + \frac{1}{2} (p_3^2+q_3^2)$ il cui grado di libertà $(p_3,q_3)$ è rappresentato da un oscillatore armonico disaccoppiato dagli altri due e che precede con $\omega_3=1$, pari a quella dei primari.
+\\D'altra parte, le equazioni del moto per gli altri due gradi di libertà si ricavano facilmente.
+Posto $x:=(p_1,p_2,q_1,q_2)$, le equazioni avranno la forma $$\dot{x}=Ax, \quad
+A:= \left( \begin{array}{llcl}
+0&1&a&b \\ -1&0&b&d \\ 1&0&0&1 \\ 0&1&-1&0
+
+\end{array}\right)  $$ \\ove $a= -1/4$, $b = \frac{3 \sqrt3}{4} (1-2\mu)$, $d= 5/4$.
+
+Notando che $H_2$ è reale simplettica, si sa che per ogni autovalore $\lambda$ ci saranno anche gli autovalori $-\lambda$, $\bar{\lambda}$, $-\bar{\lambda}$.
+In più, si nota che l'equazione agli autovalori è biquadratica. Dunque, per coppie di autovalori immaginari puri, il punto sarà stabile, o anche detto "ellittico"; mentre se almeno un autovalore avrà parte reale negativa, il punto sarà instabile, o "iperbolico".
+Nel dettaglio, si trova che, definito $$ \mu_R = \frac{1}{2} ( 1- \sqrt{\frac{23}{27}}) \simeq 0.0385 $$  ("limite di Routh"): 
+\begin{itemize}
+	\item se $\mu \leq \mu_R \quad (1-\mu) \leq \mu_R$ allora l'equilibrio è ellittico, in quanto troviamo solo autovalori immaginari puri;
+	\item altrimenti è iperbolico.
+
+In questo contesto scelta la massa del Giove $m= 1.898,19*10^{24} Kg$, la massa di Sole $M=1.988.500*10^{24}$ [NASA], $\mu_R \simeq 0.001$. 
+
+\subsection{Problemi di stabilità} 
+
+Per $\mu \leq \mu_R$ si può passare all'hamiltoniana $K(P,Q)$ espressa in coordinate normali $P_1,...,Q_3$ che rendono il sistema disaccoppiato in tre oscillatori armonici.
+$$ K(P,Q)= \frac{\omega_1}{2} ( Q_1^2+P_1^2) - \frac{\omega_2}{2} ( Q_2^2+P_2^2) + \frac{\omega_3}{2} ( Q_3^2+P_3^2)$$
+\\ove $\omega_1=\sqrt{\frac{1+\alpha}{2}}$, $\omega_2=\sqrt{\frac{1-\alpha}{2}}$, $\omega_3=1$.
+Dato che $\omega_2 < 0$, l'origine non è più un punto di minimo assoluto per l'hamiltoniana $K$ del sistema completo (precisamente L4 è punto di sella). Quindi, a differenza del sistema linearizzato, l'aggiunta di termini di $O(q^3)$ saranno fondamentali per determinare la natura del punto sotto la dinamica di \ref{hamiltonianaRTBP}.
+
+
+
+PROVA:
+
+$$ e_j + if_j= \left( \begin{array}{llcl}
+\frac{8 \omega_j^2 + 4 \sqrt{3} \alpha +9}{8} \\ \frac{16i \omega_j+4 \alpha +3 \sqrt{3}}{8} \\ i \omega_j \( \frac{8 \omega_j^2 + 4 \sqrt{3} \alpha}{8}\) 
+\\ i \omega_j \frac{4 \alpha +3\sqrt{3}}{8} + \frac{4\alpha\sqrt{3}+9}{4}
+\end{array}\right)$$
+
+con costanti $m_j (j=1,2)$ date dalla $m_j=\omega_j D_j$, 
+$$ D_j = \( \frac{8\omega_j^2 + 4 \sqrt{3}\alpha}{8}\)^2 - 2\(\sqrt{3}\alpha + \frac{9}{4} \) + \(\frac{4\alpha+3\sqrt{3}}{8}\)^2$$ \\ e $\omega_1^2$, $\omega_2^2$, $\alpha$ sono definite come $$ \omega_1^2 = \frac{1}{2} + \frac{1}{2} \sqrt{1 - \frac{27}{4} + 4\alpha^2} \quad  \omega_2^2 = \frac{1}{2} - \frac{1}{2} \sqrt{1 - \frac{27}{4} + 4\alpha^2} \quad \alpha - \frac{(1-2\mu)e\sqrt{3}}{4} $$
